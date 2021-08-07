@@ -14,11 +14,7 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.get('/', (req, res) => {
-  res.send('slack_1023_cort')
-})
-
-app.post('/', (req, res) => {
+app.post('/challenge', (req, res) => {
   console.log(req.body)
   res.send(req.body.challenge)
 })
