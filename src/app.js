@@ -14,6 +14,10 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
+app.get('/', (req, res) => {
+  res.send('slack_1023_cort')
+})
+
 app.post('/', (req, res) => {
   console.log(req.body)
   res.send(req.body.challenge)
@@ -293,10 +297,6 @@ ${totalScores}`
 })
 // **END** SLACK INTERACTION
 // %%%%%%%%%%%%%%%%%%%%%%%
-
-app.get('/', (req, res) => {
-  res.send('slack_1023_cort')
-})
 
 app.listen(port, () => {
   console.log(`Express app is up on port: ${port}`)
