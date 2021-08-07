@@ -9,15 +9,15 @@ const web = new WebClient(process.env.SLACK_OATH_TOKEN)
 const { createEventAdapter } = require('@slack/events-api')
 const slackSigningSecret = process.env.SLACK_SIGNING_SECRET
 const slackEvents = createEventAdapter(slackSigningSecret)
-const bodyParser = require('body-parser')
+// const bodyParser = require('body-parser')
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+// app.use(bodyParser.json())
+// app.use(bodyParser.urlencoded({ extended: true }))
 
-app.post('/', (req, res) => {
-  console.log(req.body)
-  res.send(req.body.challenge)
-})
+// app.post('/', (req, res) => {
+//   console.log(req.body)
+//   res.send(req.body.challenge)
+// })
 
 app.use('/', slackEvents.requestListener())
 
