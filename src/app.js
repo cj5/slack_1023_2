@@ -256,17 +256,18 @@ slackEvents.on('message', async (e) => {
           const penaltyEmoji = ':no_entry_sign:'
 
           if (e.user === chris) {
-            await postToSlack(`${penaltyEmoji} Chris ${penaltyMsg}`)
-            updateUserPenalty(chrisDisplay)
-            updateUserPoints(chrisDisplay)
+            // await postToSlack(`${penaltyEmoji} Chris ${penaltyMsg}`)
+            // updateUserPenalty(chrisDisplay)
+            // updateUserPoints(chrisDisplay)
           } else if (e.user === cortney) {
-            await postToSlack(`${penaltyEmoji} Cortney ${penaltyMsg}`)
-            updateUserPenalty(cortneyDisplay)
-            updateUserPoints(cortneyDisplay)
+            // await postToSlack(`${penaltyEmoji} Cortney ${penaltyMsg}`)
+            await postToSlack(`${penaltyEmoji} Stop it Cort! It’s not golf scoring!`)
+            // updateUserPenalty(cortneyDisplay)
+            // updateUserPoints(cortneyDisplay)
           }
 
-          await updateAllUserTotalPoints()
-          postToSlackAndUpdate()
+          // await updateAllUserTotalPoints()
+          // postToSlackAndUpdate()
         }
       }
       if (e.text === '1023') { // If user posts '1023', it will display stats
